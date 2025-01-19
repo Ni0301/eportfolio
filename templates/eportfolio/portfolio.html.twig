@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences RT - Portfolio</title>
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #6c757d 0%, #343a40 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .section-title {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #007bff;
+        }
+
+        .competence-card {
+            margin-bottom: 2rem;
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        .proof-image-placeholder {
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 0.5rem;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_eportfolio') }}">E-Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_CV') }}">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_passions') }}">Passions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_formulaire') }}">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_portfolio') }}">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <img src="{{ asset('images/image_ni.jpeg') }}" alt="Photo de profil" class="profile-img mb-4">
+            <h1 class="display-4">Mes Compétences RT</h1>
+            <p class="lead">Progression dans les domaines RT</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- RT1 Section -->
+        <section class="mb-5">
+            <h2 class="section-title">RT1 - Administrer les réseaux et l'Internet</h2>
+            <div class="card competence-card">
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Niveau d'acquisition</span>
+                            <span class="text-muted">63%</span>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-primary" role="progressbar" 
+                                 style="width: 63%" 
+                                 aria-valuenow="63" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="h5">Description et analyse des compétences</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Décrivez vos compétences en RT1..."></textarea>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="h5 mb-3">Preuves d'acquisition</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 1</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RT2 Section -->
+        <section class="mb-5">
+            <h2 class="section-title">RT2 - Connecter les entreprises et les usagers</h2>
+            <div class="card competence-card">
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Niveau d'acquisition</span>
+                            <span class="text-muted">55%</span>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" 
+                                 style="width: 55%" 
+                                 aria-valuenow="55" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="h5">Description et analyse des compétences</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Décrivez vos compétences en RT2..."></textarea>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="h5 mb-3">Preuves d'acquisition</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 1</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RT3 Section -->
+        <section class="mb-5">
+            <h2 class="section-title">RT3 - Créer des outils et des applications informatiques</h2>
+            <div class="card competence-card">
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Niveau d'acquisition</span>
+                            <span class="text-muted">60%</span>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-info" role="progressbar" 
+                                 style="width: 60%" 
+                                 aria-valuenow="60" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="h5">Description et analyse des compétences</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Décrivez vos compétences en RT3..."></textarea>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="h5 mb-3">Preuves d'acquisition</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 1</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="proof-image-placeholder">
+                                    <span>Image preuve 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 E-Portfolio Nino MEREO. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

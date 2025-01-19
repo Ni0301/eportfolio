@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #6c757d 0%, #343a40 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .cv-section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cv-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #007bff;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            background-color: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_eportfolio') }}">E-Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_CV') }}">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_passions') }}">Passions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_formulaire') }}">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_portfolio') }}">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <img src="{{ asset('images/image_ni.jpeg') }}" alt="Photo de profil" class="profile-img mb-4">
+            <h1 class="display-4">CV</h1>
+            <p class="lead">Étudiant en BUT Réseaux et Télécommunications</p>
+            <a href="{{ asset('documents/CV_Nino_MEREO.pdf') }}" class="btn btn-light mt-3" download>
+                <i class="bi bi-download"></i> Télécharger mon CV
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Coordonnées -->
+        <section class="cv-section">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="contact-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="h4">Nino MEREO</h2>
+                                <p>25 Rue Emmanuel Chabrier<br>
+                                42170 Saint-Just-Saint-Rambert</p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <p><i class="bi bi-telephone"></i> 06 44 90 20 60</p>
+                                <p><i class="bi bi-envelope"></i> nino.m42170@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectif -->
+        <section class="cv-section">
+            <h2 class="section-title">Objectif Professionnel</h2>
+            <p>Étudiant en BUT Réseaux et Télécommunications, je souhaite mettre à profit mes compétences techniques et informatiques tout en poursuivant mes études.</p>
+        </section>
+
+        <!-- Formation -->
+        <section class="cv-section">
+            <h2 class="section-title">Formation</h2>
+            <div class="experience-item">
+                <h3 class="h5">BUT Réseaux et Télécommunications - 1ère année</h3>
+                <p class="text-muted">2024 - 2025 | IUT de Roanne</p>
+            </div>
+            <div class="experience-item">
+                <h3 class="h5">Baccalauréat STI2D</h3>
+                <p class="text-muted">2024 | Lycée François Mauriac - Andrézieux</p>
+            </div>
+        </section>
+
+        <!-- Expérience -->
+        <section class="cv-section">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+            <div class="experience-item">
+                <h3 class="h5">Stage de découverte - La Poste</h3>
+                <p class="text-muted">2020-2024 (1 semaine) | Saint-Just-Saint-Rambert/Veauche</p>
+                <ul>
+                    <li>Observation et participation aux activités d'accueil des clients</li>
+                    <li>Assistance à la préparation et au tri du courrier</li>
+                    <li>Familiarisation avec les procédures et outils informatiques</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section class="cv-section">
+            <h2 class="section-title">Compétences</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h3 class="h5">Techniques</h3>
+                    <div class="mb-3">
+                        <span class="skill-tag">Codage</span>
+                        <span class="skill-tag">Initialisation réseau</span>
+                        <span class="skill-tag">Transmission d'information</span>
+                        <span class="skill-tag">Outils informatiques</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5">Relationnelles</h3>
+                    <div class="mb-3">
+                        <span class="skill-tag">Service client</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Travail en équipe</span>
+                        <span class="skill-tag">Rigueur</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Langues -->
+        <section class="cv-section">
+            <h2 class="section-title">Langues</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="h5">Français</h3>
+                    <p>Langue maternelle</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5">Anglais</h3>
+                    <p>Bonne compréhension et communication</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5">Espagnol</h3>
+                    <p>Simple compréhension et communication</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5">Japonnais</h3>
+                    <p>En cours</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 E-Portfolio Nino MEREO. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
