@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Cyber - Portfolio</title>
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #6c757d 0%, #343a40 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .section-title {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #007bff;
+        }
+        
+        .cyber-card {
+            margin-bottom: 2rem;
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            transition: transform 0.3s;
+        }
+        
+        .cyber-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cyber-image {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .skill-tag {
+            background-color: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .img-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 0.5rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_eportfolio') }}">E-Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_CV') }}">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_passions') }}">Passions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_formulaire') }}">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_portfolio') }}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_parcours') }}">Parcours</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Option Cybersécurité</h1>
+            <p class="lead">Pourquoi je veux m'engager dans cette voie</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Ma Motivation Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Ma Motivation</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Depuis le début de mon parcours en BUT Réseaux et Télécommunications, j'ai développé une véritable passion pour les aspects sécuritaires des systèmes informatiques. Mon intérêt pour l'option cybersécurité s'est construit progressivement à travers mes différentes expériences :</p>
+                    
+                    <ul class="mt-4">
+                        <li class="mb-2"><strong>Curiosité technique :</strong> Dès mon plus jeune âge, j'ai toujours cherché à comprendre comment les systèmes fonctionnent et, surtout, comment ils peuvent être vulnérables. Cette curiosité m'a naturellement orienté vers la cybersécurité.</li>
+                        <li class="mb-2"><strong>Actualité :</strong> Dans un monde où les cyberattaques font régulièrement la une des médias, je souhaite faire partie de ceux qui protègent les infrastructures sensibles et les données personnelles.</li>
+                        <li class="mb-2"><strong>Défi intellectuel :</strong> La cybersécurité représente pour moi le parfait équilibre entre compétences techniques et réflexion stratégique, un domaine en constante évolution qui ne cesse de me stimuler intellectuellement.</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-container">
+                        <p>Image montrant votre participation à un atelier/événement sur la cybersécurité</p>
+                        <!-- Remplacer par: <img src="{{ asset('images/cyber_event.jpg') }}" alt="Événement cybersécurité" class="img-fluid rounded"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences Visées Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Compétences Visées</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card cyber-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h4">Analyse de Sécurité</h3>
+                            <p class="card-text">Je souhaite développer ma capacité à identifier les menaces potentielles et à évaluer les vulnérabilités des systèmes. Cette compétence est essentielle pour anticiper les risques et mettre en place des stratégies de protection adaptées.</p>
+                            <div class="mt-3">
+                                <span class="skill-tag">Audit de sécurité</span>
+                                <span class="skill-tag">Analyse de risques</span>
+                                <span class="skill-tag">Tests d'intrusion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card cyber-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h4">Sécurisation des Infrastructures</h3>
+                            <p class="card-text">Maîtriser les techniques de sécurisation des réseaux, des systèmes et des applications est primordial. Je veux apprendre à concevoir et implémenter des architectures sécurisées qui résistent aux attaques modernes.</p>
+                            <div class="mt-3">
+                                <span class="skill-tag">Pare-feu</span>
+                                <span class="skill-tag">VPN</span>
+                                <span class="skill-tag">IDS/IPS</span>
+                                <span class="skill-tag">Durcissement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card cyber-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h4">Réponse aux Incidents</h3>
+                            <p class="card-text">Savoir réagir efficacement face à une violation de sécurité est crucial. Je souhaite acquérir les compétences nécessaires pour détecter, analyser et remédier aux incidents de sécurité dans les meilleurs délais.</p>
+                            <div class="mt-3">
+                                <span class="skill-tag">SIEM</span>
+                                <span class="skill-tag">Forensics</span>
+                                <span class="skill-tag">Gestion de crise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card cyber-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h4">Conformité et Réglementation</h3>
+                            <p class="card-text">Comprendre les enjeux juridiques et réglementaires liés à la sécurité de l'information, notamment le RGPD en Europe. Je souhaite pouvoir conseiller et accompagner les organisations dans leur mise en conformité.</p>
+                            <div class="mt-3">
+                                <span class="skill-tag">RGPD</span>
+                                <span class="skill-tag">ISO 27001</span>
+                                <span class="skill-tag">NIS2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets Personnels Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Projets Personnels en Cybersécurité</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-container">
+                        <p>Image de votre environnement de travail/laboratoire virtuel</p>
+                        <!-- Remplacer par: <img src="{{ asset('images/cyber_lab.jpg') }}" alt="Laboratoire de cybersécurité" class="img-fluid rounded"> -->
+                    </div>
+                    <h3 class="h5 mb-3">Mon Laboratoire Virtuel</h3>
+                    <p>J'ai mis en place un environnement virtualisé pour pratiquer différentes techniques de sécurité offensive et défensive. Ce laboratoire me permet d'expérimenter dans un cadre contrôlé et d'approfondir mes connaissances pratiques.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-container">
+                        <p>Image d'une de vos certifications ou formations en cours</p>
+                        <!-- Remplacer par: <img src="{{ asset('images/cyber_cert.jpg') }}" alt="Certification cybersécurité" class="img-fluid rounded"> -->
+                    </div>
+                    <h3 class="h5 mb-3">Formations et CTF</h3>
+                    <p>Je participe régulièrement à des compétitions de type Capture The Flag (CTF) et je suis des formations en ligne sur des plateformes spécialisées comme TryHackMe et HackTheBox pour améliorer mes compétences en pentest et en sécurité défensive.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectifs Professionnels Section -->
+        <section class="bg-light p-5 rounded-3 mb-5">
+            <h2 class="section-title text-center">Objectifs Professionnels</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="lead text-center mb-4">
+                        À l'issue de ma formation, j'aspire à devenir un expert en cybersécurité, capable de protéger les systèmes d'information contre les menaces actuelles et futures.
+                    </p>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <span class="skill-tag m-1">Pentester / Ethical Hacker</span>
+                        <span class="skill-tag m-1">Analyste SOC</span>
+                        <span class="skill-tag m-1">Ingénieur Sécurité</span>
+                        <span class="skill-tag m-1">Consultant Cybersécurité</span>
+                    </div>
+                    <p class="text-center mt-4">
+                        Je souhaite contribuer à rendre le cyberespace plus sûr pour les entreprises et les particuliers, en anticipant les menaces et en concevant des solutions de protection innovantes.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 E-Portfolio Nino MEREO. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
