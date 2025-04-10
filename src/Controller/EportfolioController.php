@@ -46,4 +46,12 @@ final class EportfolioController extends AbstractController
             'controller_name' => 'EportfolioController',
         ]);
     }
+    #[Route('/eportfolio/parcours', name: 'app_eportfolio_parcours')]
+    public function parcours(): Response
+    {
+        return $this->render('eportfolio/parcours.html.twig', [
+            'controller_name' => 'EportfolioController',
+        ]);
+    }
 }
+
