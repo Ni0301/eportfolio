@@ -12,7 +12,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+            background: linear-gradient(135deg, #6c757d 0%, #6c757d 100%);
             color: white;
             padding: 2rem 0;
             margin-bottom: 2rem;
@@ -133,16 +133,6 @@
             font-weight: bold;
         }
         
-        .acquired-badge {
-            background-color: #0d6efd;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.9rem;
-            margin-left: 0.5rem;
-        }
-        
         .footer {
             background-color: #343a40;
             color: white;
@@ -152,6 +142,45 @@
         
         .return-btn {
             margin-top: 2rem;
+        }
+        
+        .code-block {
+            background-color: #212529;
+            color: #e9ecef;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            overflow: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .network-diagram {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .table-config {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-collapse: collapse;
+        }
+        
+        .table-config th, .table-config td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .table-config thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
@@ -212,23 +241,86 @@
                             <li>Routage InterVLAN sécurisé</li>
                         </ul>
                         
-                        <div class="img-container">
-                            <p>Configuration de pare-feu avec règles de filtrage</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/firewall_config.jpg') }}" alt="Configuration pare-feu" class="img-fluid rounded"> -->
+                        <h3 class="h5 mb-3">Configuration d'un routage Inter-VLAN sécurisé</h3>
+                        
+                        <p>Dans le cadre du module R201, j'ai réalisé la mise en place d'un routage Inter-VLAN sécurisé permettant de segmenter efficacement un réseau local en zones distinctes selon les fonctions plutôt que les emplacements physiques.</p>
+                        
+                        <p>J'ai configuré plusieurs VLANs sur des switchs Cisco 2960, chacun ayant son propre réseau IP :</p>
+                        
+                        <table class="table table-config">
+                            <thead>
+                                <tr>
+                                    <th>VLAN</th>
+                                    <th>Fonction</th>
+                                    <th>Adressage IP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>VLAN 2</td>
+                                    <td>Comptabilité</td>
+                                    <td>192.169.135.128/26</td>
+                                </tr>
+                                <tr>
+                                    <td>VLAN 5</td>
+                                    <td>Production</td>
+                                    <td>192.169.135.192/29</td>
+                                </tr>
+                                <tr>
+                                    <td>VLAN 6</td>
+                                    <td>Direction</td>
+                                    <td>192.169.135.0/25</td>
+                                </tr>
+                                <tr>
+                                    <td>VLAN 98</td>
+                                    <td>Administration</td>
+                                    <td>Non routable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="code-block">
+SW1(config)#interface gigabitEthernet 1/0/24
+SW1(config-if)#switchport mode trunk
+SW1(config-if)#switchport trunk allowed vlan 2,5,6
+SW1(config-if)#exit
+
+Router(config)#interface g0/0.2
+Router(config-subif)#encapsulation dot1q 2
+Router(config-subif)#ip address 192.169.135.128 255.255.255.192
+Router(config-subif)#exit
+Router(config)#interface g0/0.5
+Router(config-subif)#encapsulation dot1q 5
+Router(config-subif)#ip address 192.169.135.193 255.255.255.248
+Router(config-subif)#exit
+Router(config)#interface g0/0.6
+Router(config-subif)#encapsulation dot1q 6
+Router(config-subif)#ip address 192.169.135.1 255.255.255.128
+Router(config-subif)#exit
                         </div>
                         
-                        <p>
-                            J'ai configuré un pare-feu réseau en utilisant des règles de filtrage avancées pour contrôler précisément le trafic entrant et sortant. Ces règles ont été mises en place selon le principe du moindre privilège, en n'autorisant que les communications strictement nécessaires au fonctionnement des services.
-                        </p>
+                        <h3 class="h5 mb-3">Configuration d'ACL (Access Control Lists)</h3>
                         
-                        <div class="img-container">
-                            <p>Schéma d'architecture VLAN sécurisée</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/vlan_schema.jpg') }}" alt="Schéma VLAN" class="img-fluid rounded"> -->
+                        <p>Pour renforcer la sécurité du réseau, j'ai implémenté plusieurs types d'ACL limitant les communications entre VLANs et vers l'extérieur selon des règles strictes de sécurité :</p>
+                        
+                        <div class="code-block">
+! ACL étendue pour sécuriser les accès entre VLANs
+access-list 100 permit ip 192.169.135.128 0.0.0.63 192.169.135.192 0.0.0.7
+access-list 100 permit ip 192.169.135.128 0.0.0.63 192.169.135.0 0.0.0.127
+access-list 100 deny ip 192.169.135.0 0.0.0.63 any
+access-list 100 permit ip any any
+
+! ACL pour protéger le serveur web
+access-list 101 permit tcp 192.169.135.192 0.0.0.7 host 192.169.135.130 eq www
+access-list 101 permit tcp 192.169.135.192 0.0.0.7 host 192.169.135.130 eq 443
+access-list 101 deny ip any host 192.169.135.130
+access-list 101 permit ip any any
+
+interface GigabitEthernet0/0.2
+ ip access-group 100 out
+interface GigabitEthernet0/0.5
+ ip access-group 101 in
                         </div>
-                        
-                        <p>
-                            La segmentation du réseau avec des VLAN correctement configurés m'a permis d'isoler différents types de trafic et de limiter l'impact potentiel d'une intrusion. J'ai également mis en place un routage InterVLAN sécurisé pour permettre des communications contrôlées entre les différents segments.
-                        </p>
                     </div>
                 </section>
                 
@@ -236,13 +328,10 @@
                 <section class="mb-5">
                     <h2 class="section-title">Analyse réflexive</h2>
                     <div class="blue-section">
-                        <h3 class="h5 mb-3">Sécurisation des infrastructures réseau</h3>
-                        <p>
-                            Cette expérience m'a permis de comprendre l'importance de la défense en profondeur dans la conception des infrastructures réseau. La sécurité ne repose pas sur une seule mesure, mais sur un ensemble de couches protectrices complémentaires.
-                        </p>
-                        <p>
-                            J'ai particulièrement apprécié la mise en pratique des concepts théoriques à travers des scénarios réalistes, ce qui m'a permis de développer une approche méthodique pour identifier et atténuer les risques potentiels dans un environnement réseau.
-                        </p>
+                        <h3 class="h5 mb-3">Ce que j'ai appris et ce que je dois améliorer</h3>
+                        <p>Ces TPs m'ont fait comprendre l'importance de la segmentation réseau. J'ai vu concrètement comment les VLANs et les ACLs permettent de bloquer des accès non autorisés tout en laissant passer le trafic légitime.</p>
+                        <p>Honnêtement, j'ai encore du mal avec le choix entre ACLs standard et étendues. Je me trompe parfois sur leur placement (proche de la source ou de la destination). Et quand ça ne marche pas du premier coup, le dépannage me prend encore beaucoup de temps.</p>
+                        <p>Pour progresser, je dois m'entraîner davantage sur des scénarios complexes et apprendre à mieux lire les logs de debugging. Je voudrais aussi explorer d'autres solutions de sécurité comme les VPNs et les pare-feux nouvelle génération pour comparer avec ce que j'ai appris jusqu'ici.</p>
                     </div>
                 </section>
             </div>
@@ -254,10 +343,10 @@
                     <div class="competence-block">
                         <h3 class="h5 mb-3"><i class="bi bi-target"></i> Objectifs</h3>
                         <ul class="objectives-list">
-                            <li>Concevoir une architecture réseau sécurisée</li>
-                            <li>Implémenter des mécanismes de contrôle d'accès</li>
-                            <li>Protéger les communications entre segments réseau</li>
-                            <li>Surveiller et auditer le trafic réseau</li>
+                            <li>Concevoir une architecture réseau segmentée et sécurisée</li>
+                            <li>Implémenter des mécanismes de contrôle d'accès réseau</li>
+                            <li>Maîtriser la configuration de pare-feu sur équipements réseau</li>
+                            <li>Comprendre les technologies de routage sécurisé</li>
                         </ul>
                     </div>
                 </section>
@@ -267,10 +356,10 @@
                     <div class="competence-block">
                         <h3 class="h5 mb-3"><i class="bi bi-tools"></i> Outils Utilisés</h3>
                         <div class="tools-list">
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> Cisco IOS</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> iptables</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> pfSense</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Switchs Cisco</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Routeur Cisco</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Wireshark</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> PuTTY</span>
                         </div>
                     </div>
                 </section>
@@ -280,9 +369,11 @@
                     <div class="competence-block">
                         <h3 class="h5 mb-3"><i class="bi bi-award"></i> Compétences Acquises</h3>
                         <ul class="check-list">
-                            <li>Configuration de pare-feu avancée</li>
-                            <li>Création et gestion de VLAN sécurisés</li>
-                            <li>Mise en place de politiques de sécurité réseau</li>
+                            <li>Configuration avancée de switchs et routeurs</li>
+                            <li>Mise en place de VLANs et routage inter-VLAN</li>
+                            <li>Création et application d'ACLs standard et étendues</li>
+                            <li>Dépannage de problèmes de connectivité réseau</li>
+                            <li>Élaboration de plans d'adressage IP sécurisés</li>
                         </ul>
                     </div>
                 </section>

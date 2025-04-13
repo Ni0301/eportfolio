@@ -12,7 +12,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+            background: linear-gradient(135deg, #6c757d 0%, #6c757d 100%);
             color: white;
             padding: 2rem 0;
             margin-bottom: 2rem;
@@ -153,6 +153,27 @@
         .return-btn {
             margin-top: 2rem;
         }
+        
+        .code-block {
+            background-color: #212529;
+            color: #e9ecef;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            overflow: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .network-diagram {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -212,22 +233,29 @@
                             <li>Capture et analyse de trames</li>
                         </ul>
                         
-                        <div class="img-container">
-                            <p>Capture d'écran de configuration SSH sécurisée</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/ssh_config.jpg') }}" alt="Configuration SSH sécurisée" class="img-fluid rounded"> -->
+                        <div class="code-block">
+SW1(config)#ip ssh version 2
+SW1(config)#username admin password
+SW1(config)#line vty 0 15
+SW1(config-line)#transport input ssh
+SW1(config-line)#login local
+SW1(config-line)#exit
                         </div>
                         
                         <p>
                             Dans le cadre de ce module, j'ai appris à sécuriser correctement un serveur SSH en utilisant des clés cryptographiques plutôt que des mots de passe simples. J'ai également configuré des restrictions d'accès pour limiter les tentatives de connexion et prévenir les attaques par force brute.
                         </p>
                         
-                        <div class="img-container">
-                            <p>Capture Wireshark d'analyse de trame réseau</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/wireshark_capture.jpg') }}" alt="Capture Wireshark" class="img-fluid rounded"> -->
+                        <div class="network-diagram">
+                            <img src="{{ asset('images/dhcp.png') }}" alt="Schéma réseau VLAN" class="img-fluid">
                         </div>
                         
                         <p>
                             L'analyse de trame avec Wireshark m'a permis de comprendre en profondeur le fonctionnement des protocoles réseau et d'identifier des problèmes potentiels de sécurité dans les communications. Cette compétence est fondamentale pour détecter des intrusions ou des comportements anormaux sur le réseau.
+                        </p>
+                        
+                        <p>
+                            J'ai également travaillé sur la mise en place d'une topologie réseau segmentée en VLANs (comme illustré ci-dessus), avec un VLAN 50 pour les ressources humaines, un VLAN 51 pour la production et un VLAN 52 pour les services commerciaux. Cette segmentation permet d'améliorer la sécurité et la gestion du trafic réseau.
                         </p>
                     </div>
                 </section>
@@ -241,7 +269,10 @@
                             Ces compétences fondamentales en réseaux m'ont permis de construire une base solide pour comprendre comment les systèmes communiquent entre eux et quelles sont les vulnérabilités inhérentes à ces communications.
                         </p>
                         <p>
-                            J'ai été particulièrement intéressé par la façon dont les protocoles comme SSH et DHCP peuvent être sécurisés pour prévenir les attaques courantes. Cette expérience pratique a renforcé ma conviction que la sécurité doit être considérée dès la conception de l'infrastructure réseau.
+                            J'ai été particulièrement intéressé par la façon dont les protocoles comme SSH et DHCP peuvent être sécurisés pour prévenir les attaques courantes. La mise en place de VLANs distincts pour séparer les différents départements d'une entreprise m'a fait comprendre l'importance de la segmentation réseau dans une stratégie de sécurité globale.
+                        </p>
+                        <p>
+                            Cette expérience pratique a renforcé ma conviction que la sécurité doit être considérée dès la conception de l'infrastructure réseau, et non comme une couche ajoutée après coup.
                         </p>
                     </div>
                 </section>
@@ -256,8 +287,8 @@
                         <ul class="objectives-list">
                             <li>Comprendre les fondamentaux des réseaux TCP/IP</li>
                             <li>Mettre en place des services réseau sécurisés</li>
+                            <li>Configurer la segmentation réseau avec VLANs</li>
                             <li>Analyser le trafic réseau pour détecter des anomalies</li>
-                            <li>Configurer correctement les protocoles de base</li>
                         </ul>
                     </div>
                 </section>
@@ -268,8 +299,9 @@
                         <h3 class="h5 mb-3"><i class="bi bi-tools"></i> Outils Utilisés</h3>
                         <div class="tools-list">
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Wireshark</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> OpenSSH</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> SSH</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> ISC DHCP Server</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Commutateurs Cisco</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Packet Tracer</span>
                         </div>
                     </div>
@@ -281,6 +313,7 @@
                         <h3 class="h5 mb-3"><i class="bi bi-award"></i> Compétences Acquises</h3>
                         <ul class="check-list">
                             <li>Configuration sécurisée de services réseau</li>
+                            <li>Mise en place et gestion des VLANs</li>
                             <li>Analyse de paquets et diagnostic réseau</li>
                             <li>Identification des vulnérabilités basiques</li>
                         </ul>

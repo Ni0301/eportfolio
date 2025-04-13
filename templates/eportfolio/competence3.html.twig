@@ -12,7 +12,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+            background: linear-gradient(135deg, #6c757d 0%, #6c757d 100%);
             color: white;
             padding: 2rem 0;
             margin-bottom: 2rem;
@@ -203,21 +203,19 @@
                         </ul>
                         
                         <div class="img-container">
-                            <p>Configuration d'environnement Docker multi-conteneurs</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/docker_config.jpg') }}" alt="Configuration Docker" class="img-fluid rounded"> -->
+                        <img src="{{ asset('images/docker.png') }}" alt="Configuration Docker" class="img-fluid rounded">
                         </div>
                         
                         <p>
-                            J'ai mis en place un environnement Docker composé de plusieurs conteneurs interconnectés pour simuler une infrastructure complète. Cette approche m'a permis de créer rapidement des environnements isolés pour tester des scénarios d'attaque et de défense sans compromettre les systèmes de production.
+                            Dans le cadre du module R2.02, j'ai pu mettre en place une infrastructure de conteneurs Docker. J'ai notamment créé plusieurs conteneurs à partir d'une même image Nginx pour simuler différents serveurs web isolés. Cette approche m'a permis de comprendre les avantages de la conteneurisation par rapport à la virtualisation classique en termes d'optimisation des ressources.
                         </p>
                         
                         <div class="img-container">
-                            <p>Test d'intrusion sur un système vulnérable</p>
-                            <!-- Remplacer par: <img src="{{ asset('images/pentest_results.jpg') }}" alt="Résultats de test d'intrusion" class="img-fluid rounded"> -->
+                        <img src="{{ asset('images/partage.png') }}" alt="Communication Linux/Windows" class="img-fluid rounded">
                         </div>
                         
                         <p>
-                            À travers des exercices pratiques, j'ai appris à identifier et exploiter des vulnérabilités courantes dans différents systèmes d'exploitation. Cette expérience m'a donné une meilleure compréhension des vecteurs d'attaque potentiels et des méthodes pour les atténuer efficacement.
+                            J'ai également travaillé sur la communication entre différents systèmes d'exploitation, notamment Ubuntu Linux et Windows. Cet exercice m'a permis de comprendre les défis liés à l'interopérabilité entre systèmes hétérogènes et d'acquérir les compétences nécessaires pour établir des connexions sécurisées entre eux, comme la configuration de partages réseau et l'utilisation de protocoles communs.
                         </p>
                     </div>
                 </section>
@@ -226,12 +224,12 @@
                 <section class="mb-5">
                     <h2 class="section-title">Analyse réflexive</h2>
                     <div class="blue-section">
-                        <h3 class="h5 mb-3">Tests d'intrusion et évaluation de vulnérabilités</h3>
+                        <h3 class="h5 mb-3">Avantages de la conteneurisation</h3>
                         <p>
-                            L'expérience pratique acquise dans l'évaluation des vulnérabilités m'a permis de développer une pensée critique concernant la sécurité des infrastructures. J'ai appris qu'une approche systématique est essentielle pour identifier les faiblesses potentielles avant qu'elles ne soient exploitées par des acteurs malveillants.
+                            Les travaux pratiques sur Docker m'ont permis de comprendre concrètement la différence entre virtualisation et conteneurisation. J'ai pu constater que le principal avantage des conteneurs est l'optimisation des ressources : au lieu de stocker plusieurs fois le même système d'exploitation comme en virtualisation, Docker mutualise ces ressources communes et ne stocke que les différences entre les conteneurs.
                         </p>
                         <p>
-                            La partie la plus enrichissante a été de comprendre comment les différentes couches d'une infrastructure interagissent entre elles, créant parfois des vulnérabilités qui ne seraient pas évidentes si chaque composant était évalué isolément.
+                            Par ailleurs, j'ai également découvert l'importance de la communication entre systèmes différents dans un environnement professionnel. La capacité à faire communiquer des machines Windows et Linux est essentielle dans les infrastructures hybrides actuelles. Cette compétence m'a permis de développer une vision plus globale de l'administration système.
                         </p>
                     </div>
                 </section>
@@ -244,10 +242,10 @@
                     <div class="competence-block">
                         <h3 class="h5 mb-3"><i class="bi bi-target"></i> Objectifs</h3>
                         <ul class="objectives-list">
-                            <li>Maîtriser l'administration de différents systèmes</li>
-                            <li>Concevoir des infrastructures sécurisées</li>
-                            <li>Réaliser des tests d'intrusion éthiques</li>
-                            <li>Analyser et remédier aux vulnérabilités identifiées</li>
+                            <li>Comprendre les différences entre virtualisation et conteneurisation</li>
+                            <li>Maîtriser l'utilisation de Docker pour déployer des services</li>
+                            <li>Configurer des communications entre différents systèmes d'exploitation</li>
+                            <li>Optimiser les ressources dans une infrastructure informatique</li>
                         </ul>
                     </div>
                 </section>
@@ -258,9 +256,9 @@
                         <h3 class="h5 mb-3"><i class="bi bi-tools"></i> Outils Utilisés</h3>
                         <div class="tools-list">
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Docker</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> Kali Linux</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> Metasploit</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> OpenVAS</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Nginx</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Ubuntu</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Windows</span>
                         </div>
                     </div>
                 </section>
