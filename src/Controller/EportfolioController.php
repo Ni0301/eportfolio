@@ -53,5 +53,33 @@ final class EportfolioController extends AbstractController
             'controller_name' => 'EportfolioController',
         ]);
     }
+    #[Route('/eportfolio/competence', name: 'app_eportfolio_competence')]
+    public function competence(): Response
+    {
+        return $this->render('eportfolio/competence.html.twig', [
+            'controller_name' => 'EportfolioController',
+        ]);
+    }
+    #[Route('/eportfolio/competence2', name: 'app_eportfolio_competence2')]
+    public function competence2(): Response
+    {
+        return $this->render('eportfolio/competence2.html.twig', [
+            'controller_name' => 'EportfolioController',
+        ]);
+    }
+    #[Route('/eportfolio/competence3', name: 'app_eportfolio_competence3')]
+    public function competence3(): Response
+    {
+        return $this->render('eportfolio/competence3.html.twig', [
+            'controller_name' => 'EportfolioController',
+        ]);
+    }
+    #[Route('/eportfolio/competence4', name: 'app_eportfolio_competence4')]
+    public function competence4(): Response
+    {
+        return $this->render('eportfolio/competence4.html.twig', [
+            'controller_name' => 'EportfolioController',
+        ]);
+    }
 }
 

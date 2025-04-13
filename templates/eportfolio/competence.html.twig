@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R1.01 - Initiation aux réseaux informatiques - Portfolio</title>
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0d6efd;
+        }
+        
+        .blue-section {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        
+        .competence-block {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        .img-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 0.5rem;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .check-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .check-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-item {
+            background-color: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .tool-icon {
+            margin-right: 0.5rem;
+            color: #0d6efd;
+        }
+        
+        .objectives-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .objectives-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .objectives-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0d6efd;
+            font-weight: bold;
+        }
+        
+        .acquired-badge {
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .return-btn {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_eportfolio') }}">E-Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_CV') }}">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_passions') }}">Passions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_formulaire') }}">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_portfolio') }}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_parcours') }}">Parcours Cyber</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>R1.01 - Initiation aux réseaux informatiques</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <!-- Colonne principale -->
+            <div class="col-md-8">
+                <!-- Preuves d'acquisition -->
+                <section class="mb-5">
+                    <h2 class="section-title">Preuves d'acquisition</h2>
+                    <div class="competence-block">
+                        <ul class="check-list">
+                            <li>Sécurisation SSH</li>
+                            <li>Déploiement DHCP</li>
+                            <li>Capture et analyse de trames</li>
+                        </ul>
+                        
+                        <div class="img-container">
+                            <p>Capture d'écran de configuration SSH sécurisée</p>
+                            <!-- Remplacer par: <img src="{{ asset('images/ssh_config.jpg') }}" alt="Configuration SSH sécurisée" class="img-fluid rounded"> -->
+                        </div>
+                        
+                        <p>
+                            Dans le cadre de ce module, j'ai appris à sécuriser correctement un serveur SSH en utilisant des clés cryptographiques plutôt que des mots de passe simples. J'ai également configuré des restrictions d'accès pour limiter les tentatives de connexion et prévenir les attaques par force brute.
+                        </p>
+                        
+                        <div class="img-container">
+                            <p>Capture Wireshark d'analyse de trame réseau</p>
+                            <!-- Remplacer par: <img src="{{ asset('images/wireshark_capture.jpg') }}" alt="Capture Wireshark" class="img-fluid rounded"> -->
+                        </div>
+                        
+                        <p>
+                            L'analyse de trame avec Wireshark m'a permis de comprendre en profondeur le fonctionnement des protocoles réseau et d'identifier des problèmes potentiels de sécurité dans les communications. Cette compétence est fondamentale pour détecter des intrusions ou des comportements anormaux sur le réseau.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Analyse réflexive -->
+                <section class="mb-5">
+                    <h2 class="section-title">Analyse réflexive</h2>
+                    <div class="blue-section">
+                        <h3 class="h5 mb-3">Fondamentaux des réseaux et de leur sécurité</h3>
+                        <p>
+                            Ces compétences fondamentales en réseaux m'ont permis de construire une base solide pour comprendre comment les systèmes communiquent entre eux et quelles sont les vulnérabilités inhérentes à ces communications.
+                        </p>
+                        <p>
+                            J'ai été particulièrement intéressé par la façon dont les protocoles comme SSH et DHCP peuvent être sécurisés pour prévenir les attaques courantes. Cette expérience pratique a renforcé ma conviction que la sécurité doit être considérée dès la conception de l'infrastructure réseau.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Colonne latérale -->
+            <div class="col-md-4">
+                <!-- Objectifs -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-target"></i> Objectifs</h3>
+                        <ul class="objectives-list">
+                            <li>Comprendre les fondamentaux des réseaux TCP/IP</li>
+                            <li>Mettre en place des services réseau sécurisés</li>
+                            <li>Analyser le trafic réseau pour détecter des anomalies</li>
+                            <li>Configurer correctement les protocoles de base</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Outils Utilisés -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-tools"></i> Outils Utilisés</h3>
+                        <div class="tools-list">
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Wireshark</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> OpenSSH</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> ISC DHCP Server</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Packet Tracer</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Compétences Acquises -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-award"></i> Compétences Acquises</h3>
+                        <ul class="check-list">
+                            <li>Configuration sécurisée de services réseau</li>
+                            <li>Analyse de paquets et diagnostic réseau</li>
+                            <li>Identification des vulnérabilités basiques</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Bouton retour -->
+        <div class="text-center return-btn">
+            <a href="{{ path('app_eportfolio_parcours') }}" class="btn btn-outline-primary">Retour aux compétences</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 E-Portfolio Nino MEREO. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

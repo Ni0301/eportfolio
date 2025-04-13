@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expérience personnelle - Virus - Portfolio</title>
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0d6efd;
+        }
+        
+        .blue-section {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        
+        .competence-block {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        .img-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 0.5rem;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .check-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .check-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-item {
+            background-color: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .tool-icon {
+            margin-right: 0.5rem;
+            color: #0d6efd;
+        }
+        
+        .objectives-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .objectives-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .objectives-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0d6efd;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .return-btn {
+            margin-top: 2rem;
+        }
+        
+        .alert-box {
+            background-color: #fdf2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .alert-box-title {
+            color: #991b1b;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .alert-box-content {
+            color: #7f1d1d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_eportfolio') }}">E-Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_CV') }}">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_passions') }}">Passions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_formulaire') }}">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_eportfolio_portfolio') }}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_eportfolio_parcours') }}">Parcours Cyber</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Expérience personnelle - Virus</h1>
+                <span class="info-badge">Niveau : 4/4 (Intermédiaire)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <!-- Colonne principale -->
+            <div class="col-md-8">
+                <!-- Preuves d'acquisition -->
+                <section class="mb-5">
+                    <h2 class="section-title">Preuves d'acquisition</h2>
+                    <div class="competence-block">
+                        <ul class="check-list">
+                            <li>Analyse d'un virus</li>
+                            <li>Suppression du virus</li>
+                        </ul>
+                        
+                        <div class="alert-box">
+                            <div class="alert-box-title">Expérience réelle : Altruistic.exe</div>
+                            <div class="alert-box-content">
+                                J'ai été personnellement confronté au virus Altruistic.exe sur mon ordinateur après avoir téléchargé ce qui semblait être un logiciel légitime. J'ai rapidement remarqué des comportements anormaux sur mon système et j'ai dû résoudre ce problème par moi-même sans assistance externe.
+                            </div>
+                        </div>
+                        
+                        <div class="img-container">
+                            <p>Capture d'écran des symptômes et du comportement du virus</p>
+                            <!-- Remplacer par: <img src="{{ asset('images/virus.jpg') }}" alt="Symptômes du virus" class="img-fluid rounded"> -->
+                        </div>
+                        
+                        <p>
+                            Confronté à cette situation, j'ai d'abord isolé mon ordinateur du réseau pour éviter toute propagation. J'ai ensuite recherché des informations sur ce virus et observé son comportement : ralentissements du système, création de fichiers étranges et tentatives de connexions non autorisées. Cette expérience directe m'a permis de comprendre concrètement les mécanismes d'infection.
+                        </p>
+                        
+                        <div class="img-container">
+                            <p>Étapes de suppression que j'ai réalisées</p>
+                            <!-- Remplacer par: <img src="{{ asset('images/virus2.png') }}" alt="Étapes de suppression" class="img-fluid rounded"> -->
+                        </div>
+                        
+                        <p>
+                            Sans outils professionnels à ma disposition, j'ai dû élaborer ma propre stratégie de nettoyage. J'ai démarré en mode sans échec, identifié les processus malveillants, supprimé les fichiers suspects et nettoyé le registre Windows. Cette résolution par mes propres moyens a été une expérience d'apprentissage extrêmement formatrice qui m'a donné une compréhension pratique de la sécurité informatique.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Analyse réflexive -->
+                <section class="mb-5">
+                    <h2 class="section-title">Analyse réflexive</h2>
+                    <div class="blue-section">
+                        <h3 class="h5 mb-3">Ce que m'a appris cette expérience personnelle</h3>
+                        <p>
+                            Être confronté directement à un virus sur mon propre système a été une expérience stressante mais extrêmement formatrice. J'ai dû apprendre rapidement et agir méthodiquement sous pression, ce qui m'a permis de développer une compréhension pratique des menaces informatiques que les cours théoriques ne peuvent pas totalement transmettre.
+                        </p>
+                        <p>
+                            Cette expérience m'a sensibilisé à l'importance des bonnes pratiques préventives. J'ai également réalisé que la meilleure protection ne vient pas uniquement des outils antivirus, mais aussi d'une vigilance constante et d'une compréhension des techniques utilisées par les attaquants. Cette confrontation directe avec un malware a renforcé ma passion pour la cybersécurité et ma détermination à approfondir mes connaissances dans ce domaine.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Colonne latérale -->
+            <div class="col-md-4">
+                <!-- Objectifs -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-target"></i> Objectifs atteints</h3>
+                        <ul class="objectives-list">
+                            <li>Identifier un malware sans outils professionnels</li>
+                            <li>Comprendre son fonctionnement par observation directe</li>
+                            <li>Élaborer une stratégie de suppression avec des ressources limitées</li>
+                            <li>Restaurer un système infecté par mes propres moyens</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Outils Utilisés -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-tools"></i> Outils Utilisés</h3>
+                        <div class="tools-list">
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Gestionnaire des tâches</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Mode sans échec</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Éditeur du registre</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Forums d'entraide</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Compétences Acquises -->
+                <section class="mb-4">
+                    <div class="competence-block">
+                        <h3 class="h5 mb-3"><i class="bi bi-award"></i> Compétences Acquises</h3>
+                        <ul class="check-list">
+                            <li>Analyse de malware</li>
+                            <li>Techniques de rétro-ingénierie</li>
+                            <li>Procédures de nettoyage et de sécurisation</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Bouton retour -->
+        <div class="text-center return-btn">
+            <a href="{{ path('app_eportfolio_parcours') }}" class="btn btn-outline-primary">Retour aux compétences</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 E-Portfolio Nino MEREO. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

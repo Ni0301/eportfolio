@@ -153,6 +153,36 @@
         .cyber-card:hover {
             transform: translateY(-5px);
         }
+        
+        /* Nouvelles classes pour la mise en page comme dans l'image en noir */
+        .progress-number {
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+        
+        .competence-level {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .details-btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -203,10 +233,10 @@
             <h2 class="section-title">Ma Motivation</h2>
             <div class="row">
                 <div class="col-md-8">
-                    <p>Depuis le début de mon parcours en BUT Réseaux et Télécommunications, j'ai développé une véritable passion pour les aspects sécuritaires des systèmes informatiques. Mon intérêt pour l'option cybersécurité s'est construit progressivement à travers mes différentes expériences :</p>
+                    <p>Depuis le début de mon parcours en BUT Réseaux et Télécommunications, j'ai particuliairement aimé les aspects sécuritaires des systèmes informatiques. Mon intérêt pour l'option cybersécurité s'est construit progressivement à travers mes différentes expériences :</p>
                     
                     <ul class="mt-4">
-                        <li class="mb-2"><strong>Curiosité technique :</strong> Dès mon plus jeune âge, j'ai toujours cherché à comprendre comment les systèmes fonctionnent et, surtout, comment ils peuvent être vulnérables. Cette curiosité m'a naturellement orienté vers la cybersécurité.</li>
+                        <li class="mb-2"><strong>Curiosité technique :</strong> Dès mon plus jeune âge, j'ai toujours cherché à comprendre comment les systèmes fonctionnent notamment à cause des jeux vidéos. Cette curiosité m'a naturellement orienté vers les systèmes informatiques.</li>
                         <li class="mb-2"><strong>Actualité :</strong> Dans un monde où les cyberattaques font régulièrement la une des médias, je souhaite faire partie de ceux qui protègent les infrastructures sensibles et les données personnelles.</li>
                         <li class="mb-2"><strong>Défi intellectuel :</strong> La cybersécurité représente pour moi le parfait équilibre entre compétences techniques et réflexion stratégique, un domaine en constante évolution qui ne cesse de me stimuler intellectuellement.</li>
                     </ul>
@@ -257,9 +287,9 @@
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill" style="width: 75%;"></div>
                                 </div>
-                                <p class="text-muted text-end mt-1"><small>Avancé</small></p>
                             </div>
                             
+                            <a href="{{ path('app_eportfolio_competence') }}" class="btn details-btn mt-3">Voir détails</a>
                         </div>
                     </div>
                 </div>
@@ -296,9 +326,9 @@
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill" style="width: 50%;"></div>
                                 </div>
-                                <p class="text-muted text-end mt-1"><small>Intermédiaire</small></p>
                             </div>
                             
+                            <a href="{{ path('app_eportfolio_competence2') }}" class="btn details-btn mt-3">Voir détails</a>
                         </div>
                     </div>
                 </div>
@@ -319,7 +349,7 @@
                             <h4 class="h6 mb-2">Preuves d'acquisition</h4>
                             <div class="acquisition-item">
                                 <span class="check-icon">✅</span>
-                                <span>Administration Linux/Ubuntu</span>
+                                <span>Administration Linux/Ubuntu/Windows</span>
                             </div>
                             <div class="acquisition-item">
                                 <span class="check-icon">✅</span>
@@ -335,35 +365,49 @@
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill" style="width: 75%;"></div>
                                 </div>
-                                <p class="text-muted text-end mt-1"><small>Avancé</small></p>
                             </div>
                             
+                            <a href="{{ path('app_eportfolio_competence3') }}" class="btn details-btn mt-3">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perso -->
+                <div class="col-md-4 mb-4">
+                    <div class="competence-card">
+                        <div class="competence-header">
+                            <div>
+                                <i class="competence-icon"> </i>
+                                Expérience personnelle
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 mb-3">Virus</h3>
+                            <p class="text-muted mb-4">Altruistic.exe</p>
+                            
+                            <div class="acquisition-item">
+                                <span class="check-icon">✅</span>
+                                <span>Analyse d'un virus</span>
+                            </div>
+                            <div class="acquisition-item">
+                                <span class="check-icon">✅</span>
+                                <span>Suppression du virus</span>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <p class="mb-1 text-muted">Niveau de maîtrise</p>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="{{ path('app_eportfolio_competence4') }}" class="btn details-btn mt-3">Voir détails</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Objectifs Professionnels Section -->
-        <section class="bg-light p-5 rounded-3 mb-5">
-            <h2 class="section-title text-center">Objectifs Professionnels</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <p class="lead text-center mb-4">
-                        À l'issue de ma formation, j'espère avoir appris les bases de la cybersécurité, et plutard être capable de protéger les systèmes d'information contre les menaces futures.
-                    </p>
-                    <div class="d-flex justify-content-center flex-wrap">
-                        <span class="skill-tag m-1">Pentester / Ethical Hacker</span>
-                        <span class="skill-tag m-1">Analyste SOC</span>
-                        <span class="skill-tag m-1">Ingénieur Sécurité</span>
-                        <span class="skill-tag m-1">Consultant Cybersécurité</span>
-                    </div>
-                    <p class="text-center mt-4">
-                        Je souhaite contribuer à rendre le cyberespace plus sûr pour les entreprises et les particuliers, en anticipant les menaces et en concevant des solutions de protection innovantes.
-                    </p>
-                </div>
-            </div>
-        </section>
         
         <!-- Compétences supplémentaires -->
         <section class="mb-5">
@@ -376,8 +420,8 @@
                             <ul class="mt-3">
                                 <li>Analyse de faille</li>
                                 <li>Réponse aux incidents de sécurité</li>
+                                <li>Structure informatiques fiables</li>
                                 <li>Cloud security (AWS, Azure)</li>
-                                <li>Threat intelligence</li>
                             </ul>
                         </div>
                     </div>
@@ -387,11 +431,9 @@
                         <div class="card-body">
                             <h3 class="card-title h4">Certifications visées</h3>
                             <ul class="mt-3">
-                                <li>CompTIA Security+</li>
                                 <li>CEH (Certified Ethical Hacker)</li>
                                 <li>OSCP (Offensive Security Certified Professional)</li>
                                 <li>AWS Security Specialty</li>
-                                <li>CISSP (à long terme)</li>
                             </ul>
                         </div>
                     </div>
