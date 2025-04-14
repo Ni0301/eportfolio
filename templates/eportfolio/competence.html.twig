@@ -174,6 +174,13 @@
             margin-bottom: 1.5rem;
             text-align: center;
         }
+        .continuity-section {
+            background-color: #28a745;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -223,6 +230,16 @@
         <div class="row">
             <!-- Colonne principale -->
             <div class="col-md-8">
+                <!-- Continuité vers R3.01 Cyber - NOUVELLE SECTION -->
+                <section class="mb-5">
+                    <h2 class="section-title">Continuité dans le parcours</h2>
+                    <div class="continuity-section">
+                        <h3 class="h5 mb-3">Continuité vers la R3.01 Cyber</h3>
+                        <p>Les compétences acquises dans la ressource R201 constituent la fondation essentielle qui trouve sa continuité directe dans la <strong>SAE 3.Cyber.03 "Concevoir un réseau informatique sécurisé multi-sites"</strong> du parcours cybersécurité.</p>
+                        <p>Cette SAE me permettra d'étendre mes connaissances à des infrastructures plus complexes, en intégrant des technologies avancées comme  les tunnels VPN et les techniques de durcissement réseau. Les bases solides acquises ici en segmentation réseau et en contrôle d'accès seront directement appliquées pour concevoir des architectures de sites sécurisées.</p>
+                    </div>
+                </section>
+
                 <!-- Preuves d'acquisition -->
                 <section class="mb-5">
                     <h2 class="section-title">Preuves d'acquisition</h2>
@@ -251,10 +268,6 @@ SW1(config-line)#exit
                         </div>
                         
                         <p>
-                            L'analyse de trame avec Wireshark m'a permis de comprendre en profondeur le fonctionnement des protocoles réseau et d'identifier des problèmes potentiels de sécurité dans les communications. Cette compétence est fondamentale pour détecter des intrusions ou des comportements anormaux sur le réseau.
-                        </p>
-                        
-                        <p>
                             J'ai également travaillé sur la mise en place d'une topologie réseau segmentée en VLANs (comme illustré ci-dessus), avec un VLAN 50 pour les ressources humaines, un VLAN 51 pour la production et un VLAN 52 pour les services commerciaux. Cette segmentation permet d'améliorer la sécurité et la gestion du trafic réseau.
                         </p>
                     </div>
@@ -269,10 +282,7 @@ SW1(config-line)#exit
                             Ces compétences fondamentales en réseaux m'ont permis de construire une base solide pour comprendre comment les systèmes communiquent entre eux et quelles sont les vulnérabilités inhérentes à ces communications.
                         </p>
                         <p>
-                            J'ai été particulièrement intéressé par la façon dont les protocoles comme SSH et DHCP peuvent être sécurisés pour prévenir les attaques courantes. La mise en place de VLANs distincts pour séparer les différents départements d'une entreprise m'a fait comprendre l'importance de la segmentation réseau dans une stratégie de sécurité globale.
-                        </p>
-                        <p>
-                            Cette expérience pratique a renforcé ma conviction que la sécurité doit être considérée dès la conception de l'infrastructure réseau, et non comme une couche ajoutée après coup.
+                            Malgré quelques erreurs, j'ai été particulièrement intéressé par la façon dont les protocoles comme SSH peut être sécurisé pour prévenir les attaques courantes. La mise en place de VLANs distincts pour séparer les différents départements d'une entreprise m'a fait comprendre l'importance de la segmentation réseau dans une infrastructure de sécurité globale.
                         </p>
                     </div>
                 </section>
@@ -300,7 +310,7 @@ SW1(config-line)#exit
                         <div class="tools-list">
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Wireshark</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> SSH</span>
-                            <span class="tool-item"><i class="tool-icon">🛠️</i> ISC DHCP Server</span>
+                            <span class="tool-item"><i class="tool-icon">🛠️</i> Serveur DHCP</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Commutateurs Cisco</span>
                             <span class="tool-item"><i class="tool-icon">🛠️</i> Packet Tracer</span>
                         </div>
